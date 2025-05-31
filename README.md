@@ -281,34 +281,179 @@ for key, value in student.items():
 
 ## 12. String Handling
 ```python
-message = "Hello, World!"
-print(message.upper())
-print(message.lower())
-print(message[0:5])
+# ------------------------------------
+# String Handling in Python
+# ------------------------------------
+
+# Creating strings
+name = "Aaradhya Pandey"
+greeting = 'Hello'
+multiline_text = """This is
+a multiline
+string."""
+
+# Printing strings
+print("Name:", name)
+print("Greeting:", greeting)
+print("Multiline Text:\n", multiline_text)
+
+# String Concatenation (joining strings)
+full_greeting = greeting + ", " + name + "!"
+print("Full Greeting:", full_greeting)
+
+# Accessing characters using index (starts at 0)
+print("First letter of name:", name[0])
+print("Last letter of name:", name[-1])  # -1 means last character
+
+# String Slicing (get part of the string)
+print("First 4 letters:", name[0:4])     # from index 0 to 3
+print("From 5th letter to end:", name[4:])
+
+# String Methods
+print("Uppercase:", name.upper())        # convert to uppercase
+print("Lowercase:", name.lower())        # convert to lowercase
+print("Length of name:", len(name))      # count characters
+print("Does name contain 'Pandey'?", "Pandey" in name)  # check substring
+
+# Replace a word
+new_name = name.replace("Pandey", "Kumar")
+print("Updated Name:", new_name)
+
+# Remove spaces from both ends
+message = "   Hello Python!   "
+print("Trimmed message:", message.strip())
+
+# Split string into list
+words = name.split(" ")
+print("Words in name:", words)
+
 ```
 
 ## 13. Exception Handling
+** What is Exception Handling? **
+- Exceptions are errors that occur during program execution (runtime errors).
+- If not handled, they will crash your program.
+- Python provides a way to handle exceptions using try, except, else, and finally blocks.
 ```python
+# syntax
 try:
-    number = int(input("Enter a number: "))
+    # Code that might cause an error
+except SomeError:
+    # Code that runs if an error occurs
+else:
+    # Code that runs if no error occurs
+finally:
+    # Code that runs no matter what (optional)
+
+```
+```python
+# -------------------------------
+# Exception Handling in Python
+# -------------------------------
+
+try:
+    # Ask user to enter a number
+    num = int(input("Enter a number: "))
+
+    # Divide 100 by the entered number
+    result = 100 / num
+
+    print("Result is:", result)
+
+except ZeroDivisionError:
+    # This block runs if the user enters 0
+    print("You cannot divide by zero!")
+
 except ValueError:
-    print("Invalid input!")
+    # This block runs if the input is not a number
+    print("Invalid input! Please enter a number.")
+
+else:
+    # This runs only if there was no exception
+    print("Division successful.")
+
+finally:
+    # This block always runs
+    print("Program execution completed.")
+
 ```
 
 ## 14. File Handling
-**Write to a file:**
-```python
-with open("demo.txt", "w") as file:
-    file.write("Hello File")
-```
+## What is File Handling?
 
-**Read from a file:**
+* File handling in Python allows you to **create**, **read**, **write**, and **append** data to files.
+* Python uses the built-in `open()` function to work with files.
+
+---
+
+## File Modes
+
+| Mode  | Description                        |
+| ----- | ---------------------------------- |
+| `'r'` | Read (default). File must exist.   |
+| `'w'` | Write. Creates or overwrites file. |
+| `'a'` | Append. Adds to the end of file.   |
+| `'x'` | Create new file, error if exists.  |
+| `'b'` | Binary mode (add to any mode).     |
+
+---
+
+## Example with Comments
+
 ```python
-with open("demo.txt", "r") as file:
-    content = file.read()
-    print(content)
+# --------------------------------
+# File Handling in Python
+# --------------------------------
+
+# Writing to a file
+file = open("example.txt", "w")  # 'w' = write mode
+file.write("Hello, this is a test file.\n")
+file.write("Second line of text.")
+file.close()  # Always close the file
+
+# Reading from a file
+file = open("example.txt", "r")  # 'r' = read mode
+content = file.read()            # read entire content
+print("File content:\n", content)
+file.close()
+
+# Appending to a file
+file = open("example.txt", "a")  # 'a' = append mode
+file.write("\nThis line is added later.")
+file.close()
+
+# Reading again after appending
+file = open("example.txt", "r")
+print("\nAfter appending:\n", file.read())
+file.close()
 ```
 
 ---
 
+## Best Practice: Use `with` statement (auto-closes file)
+
+```python
+# Using 'with' statement to auto-close the file
+with open("example.txt", "r") as file:
+    data = file.read()
+    print("Using with-statement:\n", data)
+```
+
+---
+
+## Other File Functions
+
+| Function           | Description                       |
+| ------------------ | --------------------------------- |
+| `read()`           | Reads the whole file              |
+| `readline()`       | Reads one line                    |
+| `readlines()`      | Reads all lines into a list       |
+| `write(text)`      | Writes text to the file           |
+| `writelines(list)` | Writes a list of strings to file  |
+| `seek(pos)`        | Move to specific position in file |
+| `tell()`           | Returns current file position     |
+
+```
+
+---
 > This is a beginner-friendly tutorial. Practice each section by writing code and modifying it to learn better!
