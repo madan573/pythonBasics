@@ -127,12 +127,51 @@ while count < 5:
 
 ## 9. Functions
 ```python
-def greet(name):
-    print("Hello, " + name)
-
-greet("Alice")
+# A function is defined using the 'def' keyword.
+# This function takes two numbers as input (parameters)
+# and returns their sum.
+def add_numbers(a, b):
+    result = a + b
+    # return the result to the caller
+    return result  
+  
+# Calling (using) the function with arguments 5 and 3
+sum_result = add_numbers(5, 3)
+# Print the returned value
+print("The sum is:", sum_result)
 ```
+```python
+# -------------------------------
+# Palindrome Checker using Function
+# -------------------------------
 
+# A palindrome is a word that reads the same forwards and backwards.
+# Example: "madam", "racecar", "level"
+
+# Define a function to check for palindrome
+def is_palindrome(word):
+    # Convert to lowercase to make the check case-insensitive
+    word = word.lower()
+
+    # Reverse the word using slicing [::-1]
+    reversed_word = word[::-1]
+
+    # Compare original and reversed
+    if word == reversed_word:
+        return True
+    else:
+        return False
+
+# Take user input
+user_input = input("Enter a word to check if it's a palindrome: ")
+
+# Call the function and display result
+if is_palindrome(user_input):
+    print(f"'{user_input}' is a palindrome!")
+else:
+    print(f"'{user_input}' is not a palindrome.")
+
+```
 ## 10. Lists, Tuples, and Sets
 ```python
 # List
