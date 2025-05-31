@@ -93,10 +93,30 @@ else:
 ## 8. Loops
 **For Loop:**
 ```python
-for i in range(5):
+for i in range(1, 6):
+    print(i)  
+
+```
+```python
+for i in range(1, 10):
+    if i == 5:
+        break
     print(i)
 ```
-
+```python
+for i in range(1, 10):
+    if i == 5:
+        continue
+    print(i)
+```
+```python
+# Example: else runs after loop finishes normally
+for i in range(3):
+    print("Looping:", i)
+    # to test and understand properly use break
+else:
+    print("Loop finished successfully.")
+```
 **While Loop:**
 ```python
 count = 0
