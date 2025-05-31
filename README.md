@@ -52,16 +52,27 @@ print("Hello, World!")
 
 ## 4. Variables and Data Types
 ```python
-name = "Alice"
-age = 25
-height = 5.6
+name = "Madan"
+age = 36
+height = 5.7
 is_student = True
+fruits = ["apple", "banana", "mango"]
+coordinates = (10.5, 20.8)
+student = {
+    "name": "Madan",
+    "age": 36,
+    "class": 10,
+    "passed": True
+}
+unique_numbers = {1, 2, 3, 4}
+
 ```
 
 ## 5. User Input and Type Casting
 ```python
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))
+height = float(input("Enter your height in feet: "))
 ```
 
 ## 6. Operators
