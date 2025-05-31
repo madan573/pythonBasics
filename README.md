@@ -175,13 +175,58 @@ else:
 ## 10. Lists, Tuples, and Sets
 ```python
 # List
-fruits = ["apple", "banana", "cherry"]
+# -------------------------------
+# Example: Python List
+# -------------------------------
+
+# A list is used to store multiple items in a single variable.
+# Lists are ordered (indexed), mutable (can be changed), and allow duplicate values.
+
+fruits = ["apple", "banana", "mango", "banana"]  # list with duplicate item
+
+print("List of fruits:", fruits)           # print the entire list
+print("First fruit:", fruits[0])           # access by index
+fruits[1] = "orange"                       # update item at index 1
+print("Updated list:", fruits)
+```
+
+```python
 
 # Tuple
-colors = ("red", "green", "blue")
+# -------------------------------
+# Example: Python Tuple
+# -------------------------------
+
+# A tuple is like a list, but it cannot be changed after creation.
+# Tuples are ordered and allow duplicates.
+
+colors = ("red", "green", "blue", "green")  # tuple with duplicate
+
+print("Tuple of colors:", colors)
+print("Second color:", colors[1])           # access by index
+
+# colors[1] = "yellow"   # This will give an error because tuples are immutable
+```
+
+```python
 
 # Set
-unique_numbers = {1, 2, 3, 2}
+# -------------------------------
+# Example: Python Set
+# -------------------------------
+
+# A set is used to store unique values (no duplicates).
+# Sets are unordered, unindexed, and mutable (but elements cannot be accessed by index).
+
+numbers = {1, 2, 3, 2, 4}
+
+print("Set of numbers:", numbers)  # Duplicate '2' is automatically removed
+
+numbers.add(5)                     # Add new element
+print("Updated set:", numbers)
+
+# print(numbers[0])  # This will give an error because sets are unindexed
+
 ```
 
 ## 11. Dictionaries
