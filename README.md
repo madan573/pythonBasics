@@ -330,7 +330,7 @@ print("Words in name:", words)
 ```
 
 ## 13. Exception Handling
-** What is Exception Handling? **
+**What is Exception Handling?**
 - Exceptions are errors that occur during program execution (runtime errors).
 - If not handled, they will crash your program.
 - Python provides a way to handle exceptions using try, except, else, and finally blocks.
